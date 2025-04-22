@@ -10,6 +10,12 @@ namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.Ma
     {
         public int GetMaximumSpellLevel(int abilityScore)
         {
+            if (abilityScore < MaxSpellConstants.MinAbilityScore)
+                return - 1;
+
+            if (abilityScore == MaxSpellConstants.MinAbilityScore)
+                return 0;
+
             int maximumSpellLevel = 0;
             return maximumSpellLevel;
         }
