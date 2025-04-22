@@ -17,7 +17,7 @@ namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.Ma
                 || abilityScore == MaxSpellConstants.MinAbilityScore + 1)
                 return 0;            
 
-            int maximumSpellLevel = MaxSpellConstants.MinSpellLevel + (abilityScore - MaxSpellConstants.MinAbilityScore) / MaxSpellConstants.SpellLevelStep;
+            int maximumSpellLevel = MaxSpellConstants.MinSpellLevel + (abilityScore - MaxSpellConstants.MinAbilityScore) / MaxSpellConstants.AbilityScoreStep / MaxSpellConstants.SpellLevelStep;
             return maximumSpellLevel;
         }
     }
