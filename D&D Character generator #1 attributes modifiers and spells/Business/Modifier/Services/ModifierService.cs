@@ -10,6 +10,9 @@ namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.Mo
     {        
         public int GetModifier(int abilityScore)
         {
+            if (abilityScore == 2)
+                return -4;
+
             return abilityScore == 0 ? 0 : -5;
         }
     }
