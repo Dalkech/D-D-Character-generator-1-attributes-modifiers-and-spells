@@ -5,18 +5,22 @@ namespace UnitTests
 {
     public class ModifierTests
     {
-        [Fact]
-        public void TestFor0()
+        private readonly ModifierService modifierService = new();
+
+        [Theory]
+        [InlineData(0, 0)]
+        [InlineData(1, -5)]
+        public void TestGetModifier(int scoreAttribute, int expected)
         {
             //arrange
             IModifierService modifierService = new ModifierService();
 
             //act
-            int modifier = modifierService.GetModdifier(0);
+            int modifier = modifierService.GetModifier(scoreAttribute);
 
             //assert
-            int expected = 0;
             Assert.Equal(expected, modifier);
         }
+       
     }
 }

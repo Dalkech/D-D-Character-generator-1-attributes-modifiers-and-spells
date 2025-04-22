@@ -8,7 +8,7 @@ namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.Mo
 {
     public sealed class ModifierService : IModifierService
     {
-        public int GetModdifier(int abilityScore)
+        public int GetModifier(int abilityScore)
         {
             return 0;
         }

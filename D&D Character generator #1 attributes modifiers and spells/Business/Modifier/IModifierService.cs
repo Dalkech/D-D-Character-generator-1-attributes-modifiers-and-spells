@@ -8,6 +8,6 @@ namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.Mo
 {
     public interface IModifierService
     {
-        int GetModdifier(int abilityScore);
+        int GetModifier(int abilityScore);
     }
 }
