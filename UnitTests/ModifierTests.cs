@@ -8,6 +8,7 @@ namespace UnitTests
         [Theory]
         [InlineData(0, 0)]
         [InlineData(1, -5)]
+        [InlineData(2, -4)]
         public void TestGetModifier(int scoreAttribute, int expected)
         {
             //arrange
