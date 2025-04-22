@@ -7,29 +7,34 @@ using System.Threading.Tasks;
 namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.ExtraSpellService.Services
 {
     public sealed class ExtraSpellsService : IExtraSpellsService
-    {
+    {      
         public int[] GetExtraSpells(int abilityScore)
         {
-            if (abilityScore < ExtraSpellsConstants.minLevelForExtraSpells)
+            if (abilityScore < 12)
                 return [];
 
-            List<int> extraSpells = [];
-            int nextLevelForExtraStep = ExtraSpellsConstants.minLevelForExtraSpells + ExtraSpellsConstants.extraSpellsLevelStep;
-            int currentSpellLevel = 1;
+            int abilityModifier = (abilityScore - 10) / 2;
+            int maxSpellLevel = (abilityModifier > 9 ? 9 : abilityModifier);
+            int[] extraSpells = new int[maxSpellLevel];
+            int slotValue = abilityModifier > 9 ? (abilityModifier - 9) / 4 + 1
+                :1;
 
-            for (int i = ExtraSpellsConstants.minLevelForExtraSpells; i <= abilityScore; i += ExtraSpellsConstants.extraSpellsStep)
+            int numberOfAssignation = abilityModifier > 9 ? 
+                (abilityModifier - 9) % 4
+                : 0; 
+
+            for(int i = maxSpellLevel-1; i > -1; i--, numberOfAssignation++)
             {
-                if (i == nextLevelForExtraStep)
+                if(numberOfAssignation == 4)
                 {
-                    nextLevelForExtraStep += ExtraSpellsConstants.extraSpellsLevelStep;
-                    currentSpellLevel++;
+                    slotValue++;
+                    numberOfAssignation = 0;
                 }
 
-                extraSpells.Add(currentSpellLevel);
+                extraSpells[i]+=slotValue;
             }
 
-            extraSpells.Reverse();
-            return extraSpells.ToArray();
+            return extraSpells;
         }
     }
 }
