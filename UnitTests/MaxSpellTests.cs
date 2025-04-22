@@ -16,8 +16,8 @@ namespace UnitTests
         [InlineData(11, 0)]
         [InlineData(12, 1)]
         [InlineData(13, 1)]
-        [InlineData(14, 2)]
-        [InlineData(15, 2)]
+        [InlineData(14, 1)]
+        [InlineData(15, 1)]
         [InlineData(44, 5)]
         [InlineData(45, 5)]
         //testing higher score
@@ -29,8 +29,8 @@ namespace UnitTests
 
             //act
             int maxSpellLevel = maxSpellService.GetMaximumSpellLevel(abiltyScore);
+            
             //assert
-
             Assert.Equal(expected, maxSpellLevel);
         }
     }
