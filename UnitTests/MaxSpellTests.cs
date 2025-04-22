@@ -17,11 +17,10 @@ namespace UnitTests
             MaxSpellService maxSpellService = new();
 
             //act
-            int maxSpellLevel = maxSpellService.GetMaximumSpellLevel(abiltyScore); 
+            int maxSpellLevel = maxSpellService.GetMaximumSpellLevel(abiltyScore);
             //assert
 
-            Assert.Equal()
-
+            Assert.Equal(expected, maxSpellLevel);
         }
     }
 }
