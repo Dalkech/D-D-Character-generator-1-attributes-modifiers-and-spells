@@ -4,17 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.MaxSpellLevel.Services
+namespace DnDCharacterGenerator1AttributesModifiersAndSpells.Business.MaxSpellLevel.Services
 {
     public sealed class MaxSpellService : IMaxSpellService
     {
+        private const int MinAbilityScore = 10;
+        private const int MinSpellLevel = 1;
+        private const int AbilityScoreStep = 2;
+        private const int SpellLevelStep = 4;
         public int GetMaximumSpellLevel(int abilityScore)
         {
-            if (abilityScore < MaxSpellConstants.MinAbilityScore)
+            if (abilityScore < MinAbilityScore)
                 return -1;
 
-            if (abilityScore == MaxSpellConstants.MinAbilityScore
-                || abilityScore == MaxSpellConstants.MinAbilityScore + 1)
+            if (abilityScore == MinAbilityScore
+                || abilityScore == MinAbilityScore + 1)
                 return 0;            
 
             int maximumSpellLevel = CalculateMaximumSpellLevel(abilityScore);
@@ -22,6 +26,6 @@ namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.Ma
         }
 
         private int CalculateMaximumSpellLevel(int abilityScore) => 
-            MaxSpellConstants.MinSpellLevel + (abilityScore - MaxSpellConstants.MinAbilityScore) / MaxSpellConstants.AbilityScoreStep / MaxSpellConstants.SpellLevelStep;
+            MinSpellLevel + (abilityScore - MinAbilityScore) / AbilityScoreStep / SpellLevelStep;
     }
 }

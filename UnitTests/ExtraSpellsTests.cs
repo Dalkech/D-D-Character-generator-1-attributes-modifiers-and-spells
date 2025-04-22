@@ -1,4 +1,4 @@
-﻿using D_D_Character_generator__1_attributes_modifiers_and_spells.Business.ExtraSpellService.Services;
+﻿using DnDCharacterGenerator1AttributesModifiersAndSpells.Business.ExtraSpellService.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;

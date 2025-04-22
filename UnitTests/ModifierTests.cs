@@ -1,5 +1,5 @@
-using D_D_Character_generator__1_attributes_modifiers_and_spells.Business.Modifier;
-using D_D_Character_generator__1_attributes_modifiers_and_spells.Business.Modifier.Services;
+using DnDCharacterGenerator1AttributesModifiersAndSpells.Business.Modifier;
+using DnDCharacterGenerator1AttributesModifiersAndSpells.Business.Modifier.Services;
 
 namespace UnitTests
 {

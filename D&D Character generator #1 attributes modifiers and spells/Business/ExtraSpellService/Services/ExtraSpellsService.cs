@@ -4,28 +4,33 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.ExtraSpellService.Services
+namespace DnDCharacterGenerator1AttributesModifiersAndSpells.Business.ExtraSpellService.Services
 {
     public sealed class ExtraSpellsService : IExtraSpellsService
-    {      
+    {
+        private const int MaxSpellLevel = 9;
+        private const int MaxNumberOfSpellsByLv = 4;
+        private const int MinNumberOfSpell = 1;
+
         public int[] GetExtraSpells(int abilityScore)
         {
             if (abilityScore < 12)
                 return [];
 
             int abilityModifier = (abilityScore - 10) / 2;
-            int maxSpellLevel = (abilityModifier > 9 ? 9 : abilityModifier);
+            int maxSpellLevel = (abilityModifier > MaxSpellLevel ? MaxSpellLevel : abilityModifier);
             int[] extraSpells = new int[maxSpellLevel];
-            int slotValue = abilityModifier > 9 ? (abilityModifier - 9) / 4 + 1
-                :1;
 
-            int numberOfAssignation = abilityModifier > 9 ? 
-                (abilityModifier - 9) % 4
-                : 0; 
+            int slotValue = abilityModifier > MaxSpellLevel 
+                ? (abilityModifier - MaxSpellLevel) / MaxNumberOfSpellsByLv + 1
+                : MinNumberOfSpell;
+            int numberOfAssignation = abilityModifier > MaxSpellLevel ? 
+                (abilityModifier - MaxSpellLevel) % MaxNumberOfSpellsByLv
+                :0; 
 
             for(int i = maxSpellLevel-1; i > -1; i--, numberOfAssignation++)
             {
-                if(numberOfAssignation == 4)
+                if(numberOfAssignation == MaxNumberOfSpellsByLv)
                 {
                     slotValue++;
                     numberOfAssignation = 0;

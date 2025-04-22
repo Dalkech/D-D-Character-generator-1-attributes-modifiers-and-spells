@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.MaxSpellLevel
+namespace DnDCharacterGenerator1AttributesModifiersAndSpells.Business.MaxSpellLevel
 {
     public interface IMaxSpellService
     {

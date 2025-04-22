@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.ExtraSpellService
+namespace DnDCharacterGenerator1AttributesModifiersAndSpells.Business.ExtraSpellService
 {
     public interface IExtraSpellsService
     {
