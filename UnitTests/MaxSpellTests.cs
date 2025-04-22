@@ -14,6 +14,10 @@ namespace UnitTests
         [InlineData(9, -1)]
         [InlineData(10, 0)]
         [InlineData(11, 0)]
+        [InlineData(12, 1)]
+        [InlineData(13, 1)]
+        [InlineData(14, 2)]
+        [InlineData(15, 2)]
         public void TestGetMaxSpellLevel(int abiltyScore, int expected)
         {
             // arrange
