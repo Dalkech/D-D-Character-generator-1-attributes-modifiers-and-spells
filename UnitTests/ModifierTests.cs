@@ -9,6 +9,14 @@ namespace UnitTests
         [InlineData(0, 0)]
         [InlineData(1, -5)]
         [InlineData(2, -4)]
+        [InlineData(3, -4)]
+        [InlineData(4, -3)]
+        //edge test, reaching 0 modifier
+        [InlineData(10, 0)]
+        [InlineData(20, 5)]
+        //edge test with higher abilityScore
+        [InlineData(56, 23)]
+        [InlineData(57, 23)]
         public void TestGetModifier(int scoreAttribute, int expected)
         {
             //arrange

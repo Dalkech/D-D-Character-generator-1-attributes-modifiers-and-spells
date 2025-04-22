@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.Modifier.Services
 {
     public sealed class ModifierService : IModifierService
-    {        
+    {
         public int GetModifier(int abilityScore)
         {
-            if (abilityScore == 2)
-                return -4;
+            if (abilityScore == 0)
+                return ModifierConstants.ZeroAbilityScoreModifier;
 
-            return abilityScore == 0 ? 0 : -5;
+            return ModifierConstants.MinModifier + (abilityScore / ModifierConstants.ModifierStep);
         }
     }
 }
