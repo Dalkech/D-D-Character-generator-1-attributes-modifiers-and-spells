@@ -8,5 +8,8 @@ namespace D_D_Character_generator__1_attributes_modifiers_and_spells.Business.Ex
 {
     public static class ExtraSpellsConstants
     {
+        public const int minLevelForExtraSpells = 12;
+        public const int extraSpellsLevelStep = 8;
+        public const int extraSpellsStep = 2;
     }
 }

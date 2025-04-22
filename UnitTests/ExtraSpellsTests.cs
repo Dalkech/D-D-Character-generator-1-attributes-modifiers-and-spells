@@ -9,9 +9,10 @@ namespace UnitTests
 {
     public class ExtraSpellsTests
     {
-
         [Theory]
         [InlineData(0, new int [] {})]
+        [InlineData(18, new int[] { 1,1,1,1 })]
+        [InlineData(20, new int[] { 2,1,1,1,1 })]
         public void TestGetExtraSpells(int abilityScore, int[] expected)
         {
             //arrange
